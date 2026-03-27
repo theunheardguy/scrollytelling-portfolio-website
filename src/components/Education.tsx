@@ -24,12 +24,19 @@ const EDUCATION = [
   }
 ];
 
-function EducationCard({ edu, idx }: { edu: any; idx: number }) {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+interface Education {
+  year: string;
+  degree: string;
+  school: string;
+  location: string;
+}
+
+function EducationCard({ edu, idx }: { edu: Education; idx: number }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }

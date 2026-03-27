@@ -44,12 +44,21 @@ const EXPERIENCES = [
 
 import { FiBriefcase, FiMapPin, FiCalendar } from "react-icons/fi";
 
-function ExperienceCard({ exp, idx }: { exp: any; idx: number }) {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+interface Experience {
+  role: string;
+  company: string;
+  date: string;
+  location: string;
+  description: string[];
+  tags: string[];
+}
+
+function ExperienceCard({ exp, idx }: { exp: Experience; idx: number }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }

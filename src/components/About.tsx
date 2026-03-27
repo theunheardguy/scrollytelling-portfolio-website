@@ -41,7 +41,7 @@ export default function About() {
             Currently, I focus heavily on <span className="text-white font-medium">RAG-based multi-agent systems</span>, intelligent automation, and building scalable LLM-powered tools. My work consistently bridges the gap between complex backend architectures and seamless user experiences.
           </p>
           <p>
-            Whether it's accelerating internal processes by 70% through intelligent automation or architecting resilient data workflows, I thrive on turning highly technical challenges into elegant, resilient applications.
+            Whether it&apos;s accelerating internal processes by 70% through intelligent automation or architecting resilient data workflows, I thrive on turning highly technical challenges into elegant, resilient applications.
           </p>
         </motion.div>
 
