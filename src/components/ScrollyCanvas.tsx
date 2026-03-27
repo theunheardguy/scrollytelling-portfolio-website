@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
 
-const FRAME_COUNT = 109;
+const FRAME_COUNT = 120;
 const FRAME_GENERATE_URL = (index: number) => {
   const paddedIndex = index.toString().padStart(3, "0");
   return `/sequence/frame_${paddedIndex}_delay-0.066s.webp`;
