@@ -1,0 +1,21 @@
+"use client";
+
+import { motion, useScroll, useSpring } from "framer-motion";
+
+export default function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  
+  // Add a slight spring to make the bar feel extremely premium and smooth
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 z-[100] bg-gradient-to-r from-neutral-200 via-neutral-400 to-white origin-left"
+      style={{ scaleX }}
+    />
+  );
+}
