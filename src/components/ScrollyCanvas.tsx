@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useMotionValueEvent, motion, useTransform, AnimatePresence } from "framer-motion";
+import { useScroll, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
 
 const FRAME_COUNT = 109;
 const FRAME_GENERATE_URL = (index: number) => {

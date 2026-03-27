@@ -42,12 +42,20 @@ const PROJECTS = [
   }
 ];
 
-function ProjectCard({ project, idx }: { project: any; idx: number }) {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+interface Project {
+  category: string;
+  title: string;
+  description: string;
+  tags: string[];
+  icon?: React.ElementType;
+}
+
+function ProjectCard({ project, idx }: { project: Project; idx: number }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
@@ -91,7 +99,7 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
         </p>
         
         <div className="mt-auto flex flex-wrap gap-2">
-          {project.tags.map((tag: any, tagIdx: number) => (
+          {project.tags.map((tag: string, tagIdx: number) => (
             <span key={tagIdx} className="text-[10px] md:text-xs font-semibold text-zinc-400 border border-white/10 bg-white/[0.02] px-2.5 py-1 rounded-full">
               {tag}
             </span>

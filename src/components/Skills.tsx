@@ -40,7 +40,7 @@ const SKILLS_ROW_2 = [
   { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
 ];
 
-const MarqueeRow = ({ items, direction = "left", speed = 40 }: { items: any[], direction?: "left" | "right", speed?: number }) => {
+const MarqueeRow = ({ items, direction = "left", speed = 40 }: { items: { name: string; icon: React.ElementType; color: string }[], direction?: "left" | "right", speed?: number }) => {
   return (
     <div className="flex overflow-hidden w-full relative">
       <motion.div
